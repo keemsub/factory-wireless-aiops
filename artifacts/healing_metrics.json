@@ -1,0 +1,47 @@
+{
+  "none": {
+    "sla_violation_agv_seconds": 2125,
+    "reduction_vs_none": 0.0,
+    "actions": {},
+    "actions_by_trigger": {},
+    "actions_on_real_incident_share": null,
+    "inference_ms_per_tick_median": null
+  },
+  "reactive": {
+    "sla_violation_agv_seconds": 505,
+    "reduction_vs_none": 0.762,
+    "actions": {
+      "failover_p5g": 93,
+      "load_balance": 52,
+      "roam": 233,
+      "channel_switch": 11
+    },
+    "actions_by_trigger": {
+      "anomaly": 389
+    },
+    "actions_on_real_incident_share": 0.203,
+    "inference_ms_per_tick_median": 3.36099849994298
+  },
+  "proactive": {
+    "sla_violation_agv_seconds": 650,
+    "reduction_vs_none": 0.694,
+    "actions": {
+      "failover_p5g": 79,
+      "load_balance": 60,
+      "roam": 284,
+      "channel_switch": 11
+    },
+    "actions_by_trigger": {
+      "anomaly": 382,
+      "forecast": 52
+    },
+    "actions_on_real_incident_share": 0.205,
+    "inference_ms_per_tick_median": 3.480205499954536
+  },
+  "sla": "5초 평균 지연 > 50ms 또는 손실 > 5%",
+  "scenario": {
+    "seed": 3,
+    "seconds": 7200,
+    "agv": 20
+  }
+}

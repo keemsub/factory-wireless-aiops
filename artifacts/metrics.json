@@ -1,0 +1,103 @@
+{
+  "data": {
+    "agv": 20,
+    "train_normal_s": 7200,
+    "train_event_s": 10800,
+    "test_s": 7200,
+    "test_events": 27,
+    "test_anomaly_ratio": 0.0313
+  },
+  "anomaly_detection": {
+    "lstm_ae": {
+      "precision": 0.702,
+      "recall": 0.662,
+      "f1": 0.682,
+      "incidents": 122,
+      "incident_recall": 0.803,
+      "median_delay_s": 2.0,
+      "false_alarms_per_agv_hour": 2.309
+    },
+    "static_threshold": {
+      "precision": 0.875,
+      "recall": 0.418,
+      "f1": 0.566,
+      "incidents": 122,
+      "incident_recall": 0.664,
+      "median_delay_s": 4.0,
+      "false_alarms_per_agv_hour": 0.904
+    },
+    "isolation_forest": {
+      "precision": 0.848,
+      "recall": 0.502,
+      "f1": 0.631,
+      "incidents": 122,
+      "incident_recall": 0.787,
+      "median_delay_s": 4.5,
+      "false_alarms_per_agv_hour": 1.632
+    }
+  },
+  "root_cause": {
+    "n": 98,
+    "accuracy": 0.918,
+    "labels": [
+      "interference",
+      "ap_congestion",
+      "ap_degradation",
+      "unknown"
+    ],
+    "confusion": [
+      [
+        47,
+        4,
+        0,
+        0
+      ],
+      [
+        0,
+        32,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        11,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "forecast": {
+    "mae_ms_all": {
+      "persistence": 1.609,
+      "ridge": 1.404,
+      "transformer_p50": 1.258
+    },
+    "mae_ms_transitions": {
+      "persistence": 8.895,
+      "ridge": 6.332,
+      "transformer_p50": 6.474
+    },
+    "transition_share": 0.0677,
+    "p90_coverage": 0.914
+  },
+  "early_warning": {
+    "sla": "5초 평균 지연 > 50ms",
+    "violation_onsets": 68,
+    "warned_ahead_share": {
+      "forecast": 0.985,
+      "anomaly": 0.882,
+      "combined": 0.985
+    },
+    "median_lead_s_when_warned": {
+      "forecast": 5.0,
+      "combined": 6.0
+    },
+    "false_warnings_per_agv_hour": 3.681
+  }
+}

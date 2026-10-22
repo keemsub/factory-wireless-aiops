@@ -1,0 +1,28 @@
+[   0.0s] 시나리오 생성
+[   6.0s] LSTM AutoEncoder 학습 (정상 데이터만)
+[  27.8s]   AE epoch 1/10 recon MSE 0.6777
+[  30.8s]   AE epoch 2/10 recon MSE 0.4613
+[  33.5s]   AE epoch 3/10 recon MSE 0.4356
+[  36.3s]   AE epoch 4/10 recon MSE 0.4082
+[  39.1s]   AE epoch 5/10 recon MSE 0.3948
+[  41.7s]   AE epoch 6/10 recon MSE 0.3901
+[  45.0s]   AE epoch 7/10 recon MSE 0.3874
+[  48.0s]   AE epoch 8/10 recon MSE 0.3858
+[  50.9s]   AE epoch 9/10 recon MSE 0.3840
+[  53.9s]   AE epoch 10/10 recon MSE 0.3819
+[  58.9s]   lstm_ae           {'precision': 0.702, 'recall': 0.662, 'f1': 0.682, 'incidents': 122, 'incident_recall': 0.803, 'median_delay_s': 2.0, 'false_alarms_per_agv_hour': 2.309}
+[  58.9s]   static_threshold  {'precision': 0.875, 'recall': 0.418, 'f1': 0.566, 'incidents': 122, 'incident_recall': 0.664, 'median_delay_s': 4.0, 'false_alarms_per_agv_hour': 0.904}
+[  58.9s]   isolation_forest  {'precision': 0.848, 'recall': 0.502, 'f1': 0.631, 'incidents': 122, 'incident_recall': 0.787, 'median_delay_s': 4.5, 'false_alarms_per_agv_hour': 1.632}
+[  58.9s]   원인 진단 정확도 0.918 (n=98)
+[  58.9s] Transformer 예측 모델 학습
+[ 140.2s]   Forecaster epoch 1/8 val pinball 0.0990
+[ 219.3s]   Forecaster epoch 2/8 val pinball 0.0947
+[ 297.1s]   Forecaster epoch 3/8 val pinball 0.0945
+[ 377.1s]   Forecaster epoch 4/8 val pinball 0.0937
+[ 457.7s]   Forecaster epoch 5/8 val pinball 0.0925
+[ 537.6s]   Forecaster epoch 6/8 val pinball 0.0921
+[ 614.8s]   Forecaster epoch 7/8 val pinball 0.0908
+[ 692.9s]   Forecaster epoch 8/8 val pinball 0.0912
+[ 721.6s]   {'mae_ms_all': {'persistence': 1.609, 'ridge': 1.404, 'transformer_p50': 1.258}, 'mae_ms_transitions': {'persistence': 8.895, 'ridge': 6.332, 'transformer_p50': 6.474}, 'transition_share': 0.0677, 'p90_coverage': 0.914}
+[ 721.7s]   {'sla': '5초 평균 지연 > 50ms', 'violation_onsets': 68, 'warned_ahead_share': {'forecast': 0.985, 'anomaly': 0.882, 'combined': 0.985}, 'median_lead_s_when_warned': {'forecast': 5.0, 'combined': 6.0}, 'false_warnings_per_agv_hour': 3.681}
+[ 721.7s] 완료
